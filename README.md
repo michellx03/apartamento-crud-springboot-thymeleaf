@@ -23,9 +23,9 @@
 
 * PostgresSQL
 
-	spring.datasource.url=jdbc:postgresql://localhost:5432/ecxusdb
-	spring.datasource.username=usuario
-	spring.datasource.password=senha
+* spring.datasource.url=jdbc:postgresql://localhost:5432/ecxusdb<br/>
+* spring.datasource.username=usuario<br/>
+* spring.datasource.password=senha
 
 # Instruções
 
