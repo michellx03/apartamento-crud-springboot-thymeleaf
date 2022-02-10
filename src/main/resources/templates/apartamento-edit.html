@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title th:text="${add} ? 'Criar Apartamento' : 'Editar Apartamento'" />
+        <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    </head>
+    <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Excus</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active"><a class="nav-link" th:href="@{/}">Inicio
+				</a></li>
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/api/apartamento}">Lista Apartamentos</a></li>
+
+			</ul>
+		</div>
+	</nav>
+    	
+    	<div class="form-group">
+        <h1 th:text="${add} ? 'Criar Apartamento:' : 'Editar Apartamento:'" />
+        <br/><br/>
+        <form class="form-control" th:action="${add} ? @{/api/apartamento/add} : @{/api/apartamento/{apartamentoId}/edit(apartamentoId=${apartamento.id})}"
+              th:object="${apartamento}" method="POST">
+            <table border="0">
+                <tr th:if="${apartamento.id}">
+                    <td>ID: </td>
+                    <td>        </td>
+                    <td ><input disabled class="form-control" placeholder="Insira o numero do apartamento" type="text" th:field="*{id}" /></td>             
+                </tr>
+                <tr>
+                    <td>Apartamento: </td>
+                    <td>        </td>
+                    <td><input class="form-control" placeholder="Insira o numero do apartamento" type="text" th:field="*{numero}" /></td>              
+                </tr>
+                <tr>
+                    <td>Estado: </td>
+                    <td>        </td>
+                    <td>
+                    	
+                    	
+                    	 <select class="form-select" name="estado">
+						    <option th:each="estadoOpt : ${T(br.com.excus.apartamento.enums.Estado).values()}" 
+						        th:value="${estadoOpt}" th:text="${estadoOpt}" th:selected="${estadoOpt} == ${apartamento.estado}"></option>
+						</select>
+                    	
+                    </td>              
+                </tr>
+            </table>
+            <input class="btn btn-primary" type="submit" th:value="${add} ? 'Criar' : 'Alterar'" />
+        </form>
+        </div>
+ 
+        <br/>
+        <!-- Check if errorMessage is not null and not empty -->       
+        <div th:if="${errorMessage}" th:utext="${errorMessage}" class="error" />   
+        
+        <footer class="fixed-bottom bg-light text-center text-lg-start">
+			<!-- Copyright -->
+			<div class="text-center p-3"
+				style="background-color: rgba(0, 0, 0, 0.2);">
+				© 2022 Copyright: <a class="text-dark"
+					href="#">Excus</a>
+			</div>
+			<!-- Copyright -->
+		</footer>  
+        
+        <script src="../static/js/bootstrap.js" th:href="@{/js/bootstrap.js}"></script> 
+          
+    </body>
+</html>
