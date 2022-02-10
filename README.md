@@ -23,6 +23,10 @@
 
 * PostgresSQL
 
+	spring.datasource.url=jdbc:postgresql://localhost:5432/ecxusdb
+	spring.datasource.username=usuario
+	spring.datasource.password=senha
+
 # Instruções
 
 # PORTA
@@ -31,9 +35,8 @@
 
 # RUN
 
-1 - mvn install / mvn clean install<br/>
-2 - mvn spring-boot:run
-
+1 - mvnw install / mvnw clean install<br/>
+2 - mvnw spring-boot:run<br/>
 3 - http://localhost:8080/api/apartamento
 
 # Consulta

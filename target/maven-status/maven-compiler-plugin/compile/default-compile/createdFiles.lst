@@ -1,0 +1,9 @@
+br\com\excus\apartamento\exception\ResourceAlreadyExistsException.class
+br\com\excus\apartamento\exception\ResourceNotFoundException.class
+br\com\excus\apartamento\enums\Estado.class
+br\com\excus\apartamento\service\ApartamentoService.class
+br\com\excus\apartamento\exception\BadResourceException.class
+br\com\excus\apartamento\domain\Apartamento.class
+br\com\excus\apartamento\ApartamentoApplication.class
+br\com\excus\apartamento\controller\ApartamentoController.class
+br\com\excus\apartamento\repository\ApartamentoRepository.class
