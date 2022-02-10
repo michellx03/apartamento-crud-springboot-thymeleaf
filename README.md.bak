@@ -33,7 +33,8 @@
 
 1 - mvn install / mvn clean install<br/>
 2 - mvn spring-boot:run
-3 - http://localhost:8080/api/apartamento
+
+
 
 # Consulta
 
