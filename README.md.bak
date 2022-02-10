@@ -33,13 +33,12 @@
 
 1 - mvn install / mvn clean install<br/>
 2 - mvn spring-boot:run
-
-
+3 - http://localhost:8080/api/apartamento
 
 # Consulta
 
-<img src="docs/apartamento_listar.PNG" raw=true style="margin-right: 10px;"/>
+<img src="docs/apartamento_listar.png" raw=true style="margin-right: 10px;"/>
 
 # Editar
 
-<img src="docs/apartamento_editar.PNG" raw=true style="margin-right: 10px;"/>
+<img src="docs/apartamento_editar.png" raw=true style="margin-right: 10px;"/>
